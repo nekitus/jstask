@@ -40,35 +40,29 @@ controllers.controller('bezierController', ['$scope', '$http',
   function($scope, $http) {
       $http.get('data/bezier.json').success(function (data) {
 
-          $scope.figures = [];
+          $scope.svg = [];
 
           data.forEach(function (item, index) {
 
+              var path =  pointsToSvg(item);
 
-              var s = new Path(item)
-//                console.log(item)
-//              console.log('index', index)
-//              var centerIndex = Math.ceil(item.length / 2)
-//              var result = CheckPoint(item[0], item[1], item[centerIndex]);
-//              $scope.figures.push(result > 0 ? {val: 1} : {val: 0});
+              $scope.svg.push({path: path})
+
           });
 
       });
   }]);
 
 
-function Path(item){
-    this.arr = item
-    this.parseArray(this.arr)
-}
-Path.prototype = {
-    parseArray: function(arr){
-        console.log(arr)
-        for(var i = 0; i < arr.length; i++){
-            ret
-        }
-    },
-    pointsToSvg: function(){
+   function pointsToSvg(arr){
+       var svgPath = '';
+       var first = arr[0];
+       svgPath += 'M ' + first.X + ',' + first.Y;
 
+        for(var i = 1; i < arr.length - 2; i += 3){
+            svgPath += 'C ' + arr[i].X + ',' + arr[i].Y
+            svgPath += ' ' + arr[i+1].X + ',' + arr[i+1].Y
+            svgPath += ' ' + arr[i+2].X + ',' + arr[i+2].Y
+        }
+       return svgPath
     }
-};

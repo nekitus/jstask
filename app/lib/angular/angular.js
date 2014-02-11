@@ -8580,7 +8580,7 @@ var $locationMinErr = minErr('$location');
 /**
  * Encode path using encodeUriSegment, ignoring forward slashes
  *
- * @param {string} path Path to encode
+ * @param {string} path pathUtils to encode
  * @returns {string}
  */
 function encodePath(path) {
@@ -8956,7 +8956,7 @@ LocationHashbangInHtml5Url.prototype =
    *
    * Change path when called with parameter and return `$location`.
    *
-   * Note: Path should always begin with forward slash (/), this method will add the forward slash
+   * Note: pathUtils should always begin with forward slash (/), this method will add the forward slash
    * if it is missing.
    *
    * @param {string=} path New path
