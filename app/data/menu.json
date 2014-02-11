@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Задание",
+        "url": "list"
+    },{
+        "title": "Ориентация",
+        "url": "Orientation"
+    },{
+        "title": "Безье",
+        "url": "bezier"
+    }
+]

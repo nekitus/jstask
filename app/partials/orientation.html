@@ -1,0 +1,6 @@
+<ul>
+    <li ng-repeat=" item in figures">
+        <span>{{figures.indexOf(item) + 1}}</span>
+        <span class="label label-success {{item.val == 0 ? 'green' : 'red'}}">{{item.val == 0 ? 'positive' : 'negative'}}</span>
+    </li>
+</ul>

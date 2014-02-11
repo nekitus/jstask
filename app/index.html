@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+<head>
+  <meta charset="utf-8">
+  <title>JS Task</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body>
+<header ng-controller="menuController" class="navbar navbar-default navbar-static-top">
+    <a class="navbar-brand">Тестовое задание</a>
+    <ul ng-repeat="item in menu" class="nav navbar-nav">
+        <li><a href="#/{{item.url}}">{{item.title}}</a></li>
+    </ul>
+</header>
+
+  <div ng-view></div>
+
+</body>
+</html>
+
+
+
